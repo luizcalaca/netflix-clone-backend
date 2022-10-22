@@ -1,9 +1,6 @@
 import { Request, Response } from 'express';
 import { IUser } from '../../domain/entities/interfaces/IUser';
-import { UserRepository } from '../../domain/repository/UserRepository';
 import UserUseCase from '../../domain/usecase/UserService';
-import UserService from '../../domain/usecase/UserService';
-import UserODM from '../models/UserODM';
 
 class UserController {
 
