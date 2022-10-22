@@ -17,4 +17,4 @@ npm run dev
 
 #### MongoDB MER
 
-!(image)[screen.png]
+![image](screen.png)
