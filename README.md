@@ -1,4 +1,4 @@
-# Domain Driven Design Project with Behavior Driven Development
+# Netflix Backend clone with Node.js
 
 Domaing Driven Design (DDD) + BDD (Behavior Driven Development) + MongoDB implementation
 
