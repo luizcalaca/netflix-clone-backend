@@ -1,10 +1,12 @@
 import express from 'express';
 import { ErrorHandler } from '../infrastructure/middlewares/Error';
-import routes from '../infrastructure/routes/Routes';
+import movieRoutes from '../infrastructure/routes/movie.routes';
+import userRoutes from '../infrastructure/routes/user.routes';
 
 const app = express();
 app.use(express.json());
-app.use('/book', routes);
+app.use('/users', userRoutes);
+app.use('/movies', movieRoutes);
 app.use(ErrorHandler.execute)
 
 export default app;
