@@ -1,5 +1,5 @@
 interface ISeason {
-    movie_id: number
+    movie_id: string
     title: string
 }
 

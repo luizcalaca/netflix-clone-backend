@@ -1,6 +1,6 @@
 class Season {
     _id!: string
-    movie_id!: number
+    movie_id!: string
     title!: string
 }
 
