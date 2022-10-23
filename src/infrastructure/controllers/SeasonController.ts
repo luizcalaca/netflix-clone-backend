@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ISeason } from '../../domain/entities/interfaces/ISeason';
+import { Season } from '../../domain/entities/Season';
 import SeasonUseCase from '../../domain/usecase/SeasonService';
 
 class SeasonController {
@@ -7,12 +7,12 @@ class SeasonController {
   constructor(private SeasonUseCase: SeasonUseCase) {}
 
   public create = async (req: Request, res: Response) => {
-    const Season: ISeason = {
-      movie_id: req.body.movie_id,
+    const Season: Omit<Season, "_id"> = {
+      movie_id: req.params.id,
       title: req.body.title,
     }
 
-    const result = await this.SeasonUseCase.create(Season)
+    const result = await this.SeasonUseCase.createSeason(Season)
     return res.status(201).json(result);
   }
 
