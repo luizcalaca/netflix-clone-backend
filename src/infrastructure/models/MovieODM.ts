@@ -11,6 +11,12 @@ class MovieODM implements IPersistence {
       type: { type: String,  required: true },
       title: { type: String, required: true },
       cover: { type: String, required: true },
+      logo: { type: String, required: true },
+      thumb: { type: String, required: true },
+      description: { type: String, required: true },
+      artists: { type: [String], required: true },
+      gender: { type: [String], required: true },
+      cenes_moments: { type: [String], required: true },
     });
     this._model = model('Movie', this._schema);
   }
