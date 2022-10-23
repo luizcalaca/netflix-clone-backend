@@ -8,7 +8,7 @@ class SeasonODM implements IPersistence {
 
   constructor() {
     this._schema = new Schema<ISeason>({
-      movie_id: { type: Number,  required: true, ref: 'Movie' },
+      movie_id: { type: String,  required: true, ref: 'Movie' },
       title: { type: String, required: true },
     });
     this._model = model('Season', this._schema);
