@@ -9,7 +9,7 @@ class UserController {
   public create = async (req: Request, res: Response) => {
     const user: IUser = {
       name: req.body.name,
-      email: req.body.isbn,
+      email: req.body.email,
       password: req.body.password
     }
 
