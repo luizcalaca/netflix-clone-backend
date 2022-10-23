@@ -33,7 +33,7 @@ describe('BDD - Creating an User', () => {
         const usecase = new UserService(userRepository)
         usecase.create = sinon.stub().returns(userMock)
 
-        const result = usecase.create(user)
+        const result = await usecase.create(user)
 
         expect(result).to.be.equal(userMock)
     })

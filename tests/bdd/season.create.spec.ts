@@ -11,27 +11,27 @@ import { IPersistence } from "../../src/domain/repository/IPersistence";
 chai.use(chaiAsPromised)
 const expect = chai.expect
 
-describe('BDD - Creating an Season', () => {
+describe('BDD - Creating a Season', () => {
     it('BDD - Should create an Season', async () => {
         const season: Omit<Season, "_id"> = {
-            movie_id: 2,
+            movie_id: "2",
             title: 'the back again once time repeat',
         }
 
         const seasonMock: Season = {
             _id: "5ce819935e539c343f141ece",
-            movie_id: 2,
+            movie_id: "2",
             title: 'the back again once time repeat',
         }
 
         const iPersistence = stubInterface<IPersistence>()
         const seasonRepository = new SeasonRepository(iPersistence)
-        seasonRepository.create = sinon.stub().returns(seasonMock)
+        seasonRepository.createSeason = sinon.stub().returns(seasonMock)
 
         const usecase = new SeasonService(seasonRepository)
-        usecase.create = sinon.stub().returns(seasonMock)
+        usecase.createSeason = sinon.stub().returns(seasonMock)
 
-        const result = usecase.create(season)
+        const result = await usecase.createSeason(season)
 
         expect(result).to.be.equal(seasonMock)
     })

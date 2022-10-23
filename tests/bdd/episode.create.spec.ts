@@ -13,7 +13,7 @@ const expect = chai.expect
 describe('BDD - Creating an Episode', () => {
     it('BDD - Should create an Episode', async () => {
         const Episode: Omit<Episode, "_id"> = {
-            season_id: "Serie",
+            season_id: "5ce819935e539c343f141der",
             title: "The back the wasn't go",
             description: "Series across the world",
             number: "6",
@@ -22,7 +22,7 @@ describe('BDD - Creating an Episode', () => {
 
         const EpisodeMock: Episode = {
             _id: "5ce819935e539c343f141ece",
-            season_id: "Serie",
+            season_id: "5ce819935e539c343f141der",
             title: "The back the wasn't go",
             description: "Series across the world",
             number: "6",
@@ -31,12 +31,12 @@ describe('BDD - Creating an Episode', () => {
 
         const iPersistence = stubInterface<IPersistence>()
         const episodeRepository = new EpisodeRepository(iPersistence)
-        episodeRepository.create = sinon.stub().returns(EpisodeMock)
+        episodeRepository.createEpisode = sinon.stub().returns(EpisodeMock)
 
         const usecase = new EpisodeService(episodeRepository)
-        usecase.create = sinon.stub().returns(EpisodeMock)
+        usecase.createEpisode = sinon.stub().returns(EpisodeMock)
 
-        const result = usecase.create(Episode)
+        const result = await usecase.createEpisode(Episode)
 
         expect(result).to.be.equal(EpisodeMock)
     })

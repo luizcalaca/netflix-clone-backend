@@ -11,7 +11,7 @@ import { IPersistence } from "../../src/domain/repository/IPersistence";
 chai.use(chaiAsPromised)
 const expect = chai.expect
 
-describe('BDD - Creating an Movie', () => {
+describe('BDD - Creating a Movie', () => {
     it('BDD - Should create an Movie', async () => {
         const Movie: Omit<Movie, "_id"> = {
             type: "Serie",
@@ -45,7 +45,7 @@ describe('BDD - Creating an Movie', () => {
         const usecase = new MovieService(movieRepository)
         usecase.create = sinon.stub().returns(MovieMock)
 
-        const result = usecase.create(Movie)
+        const result = await usecase.create(Movie)
 
         expect(result).to.be.equal(MovieMock)
     })
