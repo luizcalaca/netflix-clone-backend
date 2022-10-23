@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { controller } from '../factories/MovieFactory';
+import { controller } from '../factories/EpisodeFactory';
 
 const episodeRoutes = Router()
-episodeRoutes.post('/', controller.create);
+episodeRoutes.post('/:id', controller.create);
 episodeRoutes.get('/', controller.list);
 
 export default episodeRoutes;
