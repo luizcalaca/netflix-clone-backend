@@ -18,3 +18,46 @@ npm run dev
 #### MongoDB MER
 
 ![image](screen.png)
+
+### Routes
+
+#### Post Movie
+
+http://localhost:3001/movies
+
+```json
+{
+	"type": "juniort21",
+	"title": "junior@turma21B.com",
+	"cover": "112334",
+	"logo": "asdf",
+	"thumb": "asdf",
+	"description": "asdf",
+	"artists": ["asdf", "asdf"],
+	"gender": ["asdf", "asdf"],
+	"cenes_moments": ["asdf", "asdf"]
+}
+```
+
+#### Post Season
+
+http://localhost:3001/seasons/63558b15a43e1e255fbdb6fe
+
+```json
+{
+	"title": "junior@turma21B.com"
+}
+```
+
+#### Post Episode
+
+http://localhost:3001/episodes/63558bfa6b42b510b9cf82fb
+
+```json
+{
+	"title": "junior@turma21B.com",
+	"description": "asdf",
+	"number": "654",
+	"cover": "cover.png"
+}
+```
