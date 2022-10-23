@@ -8,7 +8,7 @@ class MovieODM implements IPersistence {
 
   constructor() {
     this._schema = new Schema<IMovie>({
-      type: { type: String,  mnrequired: true },
+      type: { type: String,  required: true },
       title: { type: String, required: true },
       cover: { type: String, required: true },
     });
