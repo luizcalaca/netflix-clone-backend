@@ -40,4 +40,6 @@ describe('BDD - Creating an Episode', () => {
 
         expect(result).to.be.equal(EpisodeMock)
     })
+
+    sinon.restore()
 })

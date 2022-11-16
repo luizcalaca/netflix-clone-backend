@@ -49,4 +49,5 @@ describe('BDD - Creating a Movie', () => {
 
         expect(result).to.be.equal(MovieMock)
     })
+    sinon.restore()
 })

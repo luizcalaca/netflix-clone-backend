@@ -37,4 +37,5 @@ describe('BDD - Creating an User', () => {
 
         expect(result).to.be.equal(userMock)
     })
+    sinon.restore()
 })

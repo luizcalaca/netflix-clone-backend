@@ -35,4 +35,5 @@ describe('BDD - Creating a Season', () => {
 
         expect(result).to.be.equal(seasonMock)
     })
+    sinon.restore()
 })
